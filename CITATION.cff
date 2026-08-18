@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "CYB5R3-mARC1 redox axis in MASLD and hepatocellular carcinoma: analysis code"
+authors:
+  - family-names: "Nam"
+    given-names: "Soon Woo"
+    orcid: "https://orcid.org/0000-0001-5562-4775"
+    affiliation: "Incheon St. Mary's Hospital, College of Medicine, The Catholic University of Korea"
+version: "1.0.0"
+license: MIT
+repository-code: "https://github.com/drswnam69-debug/cyb5r3-marc1-lihc"
+abstract: >-
+  Reproducible R pipeline for the analysis of CYB5R3 and MTARC1 across the human
+  MASLD-to-hepatocellular-carcinoma continuum, using UCSC Xena (TCGA, GTEx, PanCanAtlas),
+  GEO liver-biopsy cohorts and DepMap.
