@@ -1,0 +1,5 @@
+platform,gene,n_probes,probes,rule,preprocessing
+GPL3921,CYB5R3,1,201885_s_at,mean of all probes mapped to the symbol (pre-specified),"GEO series matrix as deposited (RMA-normalised, log2); no further transformation"
+GPL3921,MTARC1,1,218865_at,mean of all probes mapped to the symbol (pre-specified),"GEO series matrix as deposited (RMA-normalised, log2); no further transformation"
+GPL571,CYB5R3,1,201885_s_at,mean of all probes mapped to the symbol (pre-specified),"GEO series matrix as deposited (RMA-normalised, log2); no further transformation"
+GPL571,MTARC1,1,218865_at,mean of all probes mapped to the symbol (pre-specified),"GEO series matrix as deposited (RMA-normalised, log2); no further transformation"

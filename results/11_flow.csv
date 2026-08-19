@@ -1,0 +1,8 @@
+step,n,note
+TCGA-LIHC HiSeqV2 samples with CYB5R3,423,""
+"Primary tumors, one sample per patient (CYB5R3)",371,""
+Merged CYB5R3 + MTARC1 (patient level),369,MTARC1 alias used: MARC1
+With clinical + survival annotation,369,""
+With non-missing OS time and status,363,""
+"PRIMARY ANALYSIS SET (complete age, sex, stage)",339,deaths = 114
+"Median follow-up, days (reverse Kaplan-Meier)",816,= 26.8 months

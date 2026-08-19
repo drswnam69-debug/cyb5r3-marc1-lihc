@@ -1,0 +1,2 @@
+gene,test,LR_chisq,df,p,AIC_linear,AIC_spline
+CYB5R3,linear vs penalised spline (df=3),1.41253881708599,2.05305229831497,0.50620506955247,1134.8064665742,1137.50003235374

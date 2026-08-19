@@ -1,0 +1,2 @@
+n_total,n_viral_positive,n_no_positive_recorded,wilcox_p,median_viral_positive,median_no_positive,label_note
+371,164,207,0.209,12.815,12.78,"The TCGA-LIHC 'viral_hepatitis_serology' field lists serologies that were POSITIVE. An empty field means no positive serology was recorded and cannot be distinguished from 'not tested'. It is therefore NOT equivalent to non-viral or metabolic aetiology, and no metabolic subset can be defined from these data."

@@ -1,0 +1,2 @@
+n_genes,observed_reversals,perm_mean,perm_sd,perm_q95,n_permutations,p_permutation
+16,8,8.0095,2.33485650640268,12,10000,0.583241675832417

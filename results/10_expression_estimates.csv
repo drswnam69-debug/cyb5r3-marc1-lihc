@@ -1,0 +1,15 @@
+cohort,gene,dataset,normal_reference,alias_used,n_tumor,n_normal,med_tumor,q1_tumor,q3_tumor,med_normal,q1_normal,q3_normal,log2FC_median,cliffs_delta,wilcox_p
+LIHC,CYB5R3,TCGA HiSeqV2 (log2 norm_count+1),TCGA adjacent normal (sample type 11),CYB5R3,373,50,12.79,12.35,13.15,12.86,12.715,13.0375,-0.07,-0.148418,0.088313
+LUAD,CYB5R3,TCGA HiSeqV2 (log2 norm_count+1),TCGA adjacent normal (sample type 11),CYB5R3,517,59,12.13,11.76,12.49,12.95,12.74,13.12,-0.82,-0.81569,0
+LIHC,CYB5R3,Xena TOIL TcgaTargetGtex RSEM (log2 TPM+0.001),TCGA adjacent normal,CYB5R3,369,50,7.071,6.545,7.515,6.5905,6.4065,6.75725,0.4805,0.432087,0.000001
+LIHC,CYB5R3,Xena TOIL TcgaTargetGtex RSEM (log2 TPM+0.001),GTEx normal,CYB5R3,369,110,7.071,6.545,7.515,6.858,6.24575,7.2285,0.213,0.1983,0.001588
+LIHC,MTARC1,Xena TOIL TcgaTargetGtex RSEM (log2 TPM+0.001),TCGA adjacent normal,MARC1,369,50,4.663,3.842,5.598,4.8755,4.36175,5.3135,-0.2125,-0.051165,0.557375
+LIHC,MTARC1,Xena TOIL TcgaTargetGtex RSEM (log2 TPM+0.001),GTEx normal,MARC1,369,110,4.663,3.842,5.598,4.621,4.166,5.04325,0.042,0.082754,0.187609
+LUAD,CYB5R3,Xena TOIL TcgaTargetGtex RSEM (log2 TPM+0.001),TCGA adjacent normal,CYB5R3,513,59,7.101,6.684,7.507,8.03,7.837,8.2005,-0.929,-0.808207,0
+LUAD,CYB5R3,Xena TOIL TcgaTargetGtex RSEM (log2 TPM+0.001),GTEx normal,CYB5R3,513,288,7.101,6.684,7.507,7.8315,7.6305,8.0245,-0.7305,-0.716347,0
+LUAD,MTARC1,Xena TOIL TcgaTargetGtex RSEM (log2 TPM+0.001),TCGA adjacent normal,MARC1,513,59,3.44,2.475,4.525,3.843,3.457,4.012,-0.403,-0.15469,0.05155
+LUAD,MTARC1,Xena TOIL TcgaTargetGtex RSEM (log2 TPM+0.001),GTEx normal,MARC1,513,288,3.44,2.475,4.525,3.51,2.616,4.091,-0.07,0.02241,0.598416
+LIHC,CYB5R3,Xena PanCanAtlas EB++ batch-corrected (log2),TCGA adjacent normal (same cohort),CYB5R3,369,50,12.8,12.35,13.15,12.86,12.715,13.0375,-0.06,-0.142547,0.101871
+LIHC,MTARC1,Xena PanCanAtlas EB++ batch-corrected (log2),TCGA adjacent normal (same cohort),MOSC1,369,50,10.19,9.29,10.97,10.955,10.4325,11.2375,-0.765,-0.370678,0.000021
+LUAD,CYB5R3,Xena PanCanAtlas EB++ batch-corrected (log2),TCGA adjacent normal (same cohort),CYB5R3,512,59,12.135,11.76,12.49,12.95,12.74,13.12,-0.815,-0.81389,0
+LUAD,MTARC1,Xena PanCanAtlas EB++ batch-corrected (log2),TCGA adjacent normal (same cohort),MOSC1,512,59,8.155,7.2325,9.2625,8.48,8.095,8.715,-0.325,-0.128542,0.105757

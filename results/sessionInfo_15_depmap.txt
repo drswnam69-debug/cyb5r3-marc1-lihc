@@ -1,0 +1,85 @@
+R version 4.6.1 (2026-06-24)
+Platform: aarch64-apple-darwin23
+Running under: macOS Tahoe 26.5.2
+
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Asia/Seoul
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] depmap_1.26.0       ggrepel_0.9.8       GEOquery_2.80.0    
+ [4] Biobase_2.72.0      BiocGenerics_0.58.1 generics_0.1.4     
+ [7] R.utils_2.13.0      R.oo_1.27.1         R.methodsS3_1.8.2  
+[10] boot_1.3-32         survminer_0.5.2     survival_3.8-6     
+[13] ggpubr_1.0.0        purrr_1.2.2         data.table_1.18.4  
+[16] tibble_3.3.1        stringr_1.6.0       readr_2.2.0        
+[19] ggplot2_4.0.3       tidyr_1.3.2         dplyr_1.2.1        
+[22] UCSCXenaTools_1.7.0
+
+loaded via a namespace (and not attached):
+  [1] RColorBrewer_1.1-3            rstudioapi_0.19.0            
+  [3] jsonlite_2.0.0                shape_1.4.6.1                
+  [5] magrittr_2.0.5                farver_2.1.2                 
+  [7] rmarkdown_2.31                vctrs_0.7.3                  
+  [9] memoise_2.0.1                 rstatix_1.0.0                
+ [11] htmltools_0.5.9               S4Arrays_1.12.0              
+ [13] AnnotationHub_4.2.2           curl_7.1.0                   
+ [15] broom_1.0.13                  SparseArray_1.12.2           
+ [17] Formula_1.2-5                 htmlwidgets_1.6.4            
+ [19] httr2_1.3.0                   plotly_4.12.1                
+ [21] cachem_1.1.0                  lifecycle_1.0.5              
+ [23] iterators_1.0.14              pkgconfig_2.0.3              
+ [25] Matrix_1.7-5                  R6_2.6.1                     
+ [27] fastmap_1.2.0                 MatrixGenerics_1.24.0        
+ [29] digest_0.6.39                 numDeriv_2016.8-1.1          
+ [31] iterpc_0.4.2                  AnnotationDbi_1.74.0         
+ [33] S4Vectors_0.50.1              ExperimentHub_3.2.0          
+ [35] GenomicRanges_1.64.0          RSQLite_3.53.3               
+ [37] filelock_1.0.3                labeling_0.4.3               
+ [39] httr_1.4.8                    abind_1.4-8                  
+ [41] compiler_4.6.1                remotes_2.5.0                
+ [43] bit64_4.8.2                   withr_3.0.3                  
+ [45] S7_0.2.2                      backports_1.5.1              
+ [47] carData_3.0-6                 DBI_1.3.0                    
+ [49] ggsignif_0.6.4                MASS_7.3-65                  
+ [51] estimate_1.0.13               quantreg_6.1                 
+ [53] rappdirs_0.3.4                DelayedArray_0.38.2          
+ [55] rjson_0.2.23                  MendelianRandomization_0.10.0
+ [57] tools_4.6.1                   otel_0.2.0                   
+ [59] rentrez_1.2.4                 glue_1.8.1                   
+ [61] grid_4.6.1                    gtable_0.3.6                 
+ [63] tzdb_0.5.0                    hms_1.1.4                    
+ [65] xml2_1.6.0                    car_3.1-5                    
+ [67] XVector_0.52.0                BiocVersion_3.23.1           
+ [69] foreach_1.5.2                 pillar_1.11.1                
+ [71] vroom_1.7.1                   arrangements_1.1.10          
+ [73] limma_3.68.4                  robustbase_0.99-7            
+ [75] splines_4.6.1                 BiocFileCache_3.2.0          
+ [77] lattice_0.22-9                gmp_0.7-5.1                  
+ [79] bit_4.6.0                     SparseM_1.84-2               
+ [81] tidyselect_1.2.1              Biostrings_2.80.1            
+ [83] knitr_1.51                    gridExtra_2.3.1              
+ [85] IRanges_2.46.0                Seqinfo_1.2.0                
+ [87] SummarizedExperiment_1.42.0   stats4_4.6.1                 
+ [89] xfun_0.60                     statmod_1.5.2                
+ [91] matrixStats_1.5.0             DEoptimR_1.2-0               
+ [93] stringi_1.8.7                 yaml_2.3.12                  
+ [95] evaluate_1.0.5                codetools_0.2-20             
+ [97] BiocManager_1.30.27           cli_3.6.6                    
+ [99] Rcpp_1.1.2                    dbplyr_2.6.0                 
+[101] png_0.1-9                     XML_3.99-0.23                
+[103] parallel_4.6.1                MatrixModels_0.5-4           
+[105] blob_1.3.0                    glmnet_5.0                   
+[107] viridisLite_0.4.3             TwoSampleMR_0.7.9            
+[109] scales_1.4.0                  crayon_1.5.3                 
+[111] writexl_1.5.4                 rlang_1.3.0                  
+[113] KEGGREST_1.52.2              

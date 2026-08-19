@@ -1,0 +1,49 @@
+cohort,gene,model,term,beta,se,p,q
+GSE130970,CYB5R3,expr ~ steatosis + lobular inflammation + ballooning,h_steatosis.grade,0.0577284664989711,0.0340568254658585,0.0942678166615575,0.282837081105996
+GSE130970,CYB5R3,expr ~ steatosis + lobular inflammation + ballooning,h_lobular.inflammation.grade,0.0419591931145658,0.059292960099523,0.48137996296864,0.618301088722208
+GSE130970,CYB5R3,expr ~ steatosis + lobular inflammation + ballooning,h_ballooning.grade,0.0812070181885499,0.0363510722272311,0.0285064555675399,0.136830986724192
+GSE130970,CYB5R3,partial Spearman adjusting for h_lobular.inflammation.grade + h_ballooning.grade,h_steatosis.grade,0.211731814621647,,0.0663397634830769,0.227450617656264
+GSE130970,CYB5R3,partial Spearman adjusting for h_steatosis.grade + h_ballooning.grade,h_lobular.inflammation.grade,-0.0207352509139866,,0.858888736641269,0.877162965080445
+GSE130970,CYB5R3,partial Spearman adjusting for h_steatosis.grade + h_lobular.inflammation.grade,h_ballooning.grade,0.270493750775598,,0.0181146480556398,0.0966114562967456
+GSE130970,MTARC1,expr ~ steatosis + lobular inflammation + ballooning,h_steatosis.grade,-0.0209229071895098,0.045941162128103,0.650134635036439,0.725731685622071
+GSE130970,MTARC1,expr ~ steatosis + lobular inflammation + ballooning,h_lobular.inflammation.grade,-0.240393125083268,0.0799835996375555,0.0036181575974465,0.0377129403849634
+GSE130970,MTARC1,expr ~ steatosis + lobular inflammation + ballooning,h_ballooning.grade,-0.034263803253308,0.049036000269484,0.486899874415048,0.618301088722208
+GSE130970,MTARC1,partial Spearman adjusting for h_lobular.inflammation.grade + h_ballooning.grade,h_steatosis.grade,0.0152687144942418,,0.895845624410048,0.895845624410048
+GSE130970,MTARC1,partial Spearman adjusting for h_steatosis.grade + h_ballooning.grade,h_lobular.inflammation.grade,-0.323939886474651,,0.00430848957847221,0.0377129403849634
+GSE130970,MTARC1,partial Spearman adjusting for h_steatosis.grade + h_lobular.inflammation.grade,h_ballooning.grade,-0.0322320455677561,,0.782235237003768,0.834384252804019
+GSE130970,SCD,expr ~ steatosis + lobular inflammation + ballooning,h_steatosis.grade,0.213780215050571,0.131971861215852,0.109509537069121,0.282837081105996
+GSE130970,SCD,expr ~ steatosis + lobular inflammation + ballooning,h_lobular.inflammation.grade,-0.212483668591839,0.229763114861536,0.358078794315647,0.529243108614012
+GSE130970,SCD,expr ~ steatosis + lobular inflammation + ballooning,h_ballooning.grade,0.104090482691751,0.140862179413311,0.462273218851409,0.618301088722208
+GSE130970,SCD,partial Spearman adjusting for h_lobular.inflammation.grade + h_ballooning.grade,h_steatosis.grade,0.186899126966407,,0.105959208660238,0.282837081105996
+GSE130970,SCD,partial Spearman adjusting for h_steatosis.grade + h_ballooning.grade,h_lobular.inflammation.grade,-0.0804823330913157,,0.489488361905082,0.618301088722208
+GSE130970,SCD,partial Spearman adjusting for h_steatosis.grade + h_lobular.inflammation.grade,h_ballooning.grade,0.0771875388898146,,0.507495206676262,0.624609485140015
+GSE130970,NQO1,expr ~ steatosis + lobular inflammation + ballooning,h_steatosis.grade,-0.0969561487290867,0.0692675197261842,0.165771156398193,0.361682523050602
+GSE130970,NQO1,expr ~ steatosis + lobular inflammation + ballooning,h_lobular.inflammation.grade,0.126270980521295,0.120594806683754,0.298476173983683,0.505253148414062
+GSE130970,NQO1,expr ~ steatosis + lobular inflammation + ballooning,h_ballooning.grade,0.152807333446808,0.0739337439155005,0.0422504751874546,0.169001900749818
+GSE130970,NQO1,partial Spearman adjusting for h_lobular.inflammation.grade + h_ballooning.grade,h_steatosis.grade,-0.0692961612043063,,0.551968089513848,0.662361707416617
+GSE130970,NQO1,partial Spearman adjusting for h_steatosis.grade + h_ballooning.grade,h_lobular.inflammation.grade,0.114107222628521,,0.326352310211205,0.505319706133478
+GSE130970,NQO1,partial Spearman adjusting for h_steatosis.grade + h_lobular.inflammation.grade,h_ballooning.grade,0.244593379041914,,0.0332182490290709,0.144952359399582
+GSE130970,PARP16,expr ~ steatosis + lobular inflammation + ballooning,h_steatosis.grade,0.0302542026760815,0.0286824175937265,0.294948741799629,0.505253148414062
+GSE130970,PARP16,expr ~ steatosis + lobular inflammation + ballooning,h_lobular.inflammation.grade,-0.0456254144187433,0.049936111739116,0.363854637172134,0.529243108614012
+GSE130970,PARP16,expr ~ steatosis + lobular inflammation + ballooning,h_ballooning.grade,0.0118848886663858,0.0306146159936834,0.698975493074665,0.762518719717817
+GSE130970,PARP16,partial Spearman adjusting for h_lobular.inflammation.grade + h_ballooning.grade,h_steatosis.grade,0.123222038548059,,0.28893121910738,0.505253148414062
+GSE130970,PARP16,partial Spearman adjusting for h_steatosis.grade + h_ballooning.grade,h_lobular.inflammation.grade,-0.170566803375735,,0.140712809979856,0.321629279953956
+GSE130970,PARP16,partial Spearman adjusting for h_steatosis.grade + h_lobular.inflammation.grade,h_ballooning.grade,0.0658318089122794,,0.572066720390181,0.669736648261676
+GSE130970,FASN,expr ~ steatosis + lobular inflammation + ballooning,h_steatosis.grade,0.129225250190138,0.114045215771016,0.260827881918551,0.505253148414062
+GSE130970,FASN,expr ~ steatosis + lobular inflammation + ballooning,h_lobular.inflammation.grade,-0.319397379836357,0.198552810949196,0.111956344604457,0.282837081105996
+GSE130970,FASN,expr ~ steatosis + lobular inflammation + ballooning,h_ballooning.grade,0.311552434661653,0.121727900911327,0.0125266480947377,0.0812482422169047
+GSE130970,FASN,partial Spearman adjusting for h_lobular.inflammation.grade + h_ballooning.grade,h_steatosis.grade,0.116609901807775,,0.315783217758789,0.505253148414062
+GSE130970,FASN,partial Spearman adjusting for h_steatosis.grade + h_ballooning.grade,h_lobular.inflammation.grade,-0.186559666885007,,0.106606353660914,0.282837081105996
+GSE130970,FASN,partial Spearman adjusting for h_steatosis.grade + h_lobular.inflammation.grade,h_ballooning.grade,0.28213350878813,,0.0135413737028174,0.0812482422169047
+GSE130970,COL1A1,expr ~ steatosis + lobular inflammation + ballooning,h_steatosis.grade,0.0224388031699409,0.10060830615189,0.824125632384436,0.859957181618542
+GSE130970,COL1A1,expr ~ steatosis + lobular inflammation + ballooning,h_lobular.inflammation.grade,0.333529548588948,0.17515914066403,0.0607780697096652,0.22441133431261
+GSE130970,COL1A1,expr ~ steatosis + lobular inflammation + ballooning,h_ballooning.grade,0.354019654660719,0.107385810437707,0.00150448571355345,0.0361076571252829
+GSE130970,COL1A1,partial Spearman adjusting for h_lobular.inflammation.grade + h_ballooning.grade,h_steatosis.grade,0.0573848444354534,,0.62244758533826,0.711368668958011
+GSE130970,COL1A1,partial Spearman adjusting for h_steatosis.grade + h_ballooning.grade,h_lobular.inflammation.grade,0.173665064843736,,0.133533795135574,0.320481108325379
+GSE130970,COL1A1,partial Spearman adjusting for h_steatosis.grade + h_lobular.inflammation.grade,h_ballooning.grade,0.364472840290299,,0.00120855982991962,0.0361076571252829
+GSE130970,TGFB1,expr ~ steatosis + lobular inflammation + ballooning,h_steatosis.grade,0.0559777085654458,0.0464682275940898,0.232179110884915,0.484547709672865
+GSE130970,TGFB1,expr ~ steatosis + lobular inflammation + ballooning,h_lobular.inflammation.grade,0.088024161736663,0.0809012210311266,0.280106328157449,0.505253148414062
+GSE130970,TGFB1,expr ~ steatosis + lobular inflammation + ballooning,h_ballooning.grade,0.145079966098624,0.0495985716354433,0.00456911666393412,0.0377129403849634
+GSE130970,TGFB1,partial Spearman adjusting for h_lobular.inflammation.grade + h_ballooning.grade,h_steatosis.grade,0.117398852345531,,0.312497563718046,0.505253148414062
+GSE130970,TGFB1,partial Spearman adjusting for h_steatosis.grade + h_ballooning.grade,h_lobular.inflammation.grade,0.0857466405024254,,0.461431928462521,0.618301088722208
+GSE130970,TGFB1,partial Spearman adjusting for h_steatosis.grade + h_lobular.inflammation.grade,h_ballooning.grade,0.320857947269255,,0.00471411754812043,0.0377129403849634

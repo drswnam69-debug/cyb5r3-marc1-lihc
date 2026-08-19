@@ -1,0 +1,71 @@
+R version 4.6.1 (2026-06-24)
+Platform: aarch64-apple-darwin23
+Running under: macOS Tahoe 26.5.2
+
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Asia/Seoul
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] ggrepel_0.9.8       forcats_1.0.1       metafor_5.0-1      
+ [4] numDeriv_2016.8-1.1 metadat_1.6-0       Matrix_1.7-5       
+ [7] mice_3.19.0         GEOquery_2.80.0     Biobase_2.72.0     
+[10] BiocGenerics_0.58.1 generics_0.1.4      UCSCXenaTools_1.7.0
+[13] R.utils_2.13.0      R.oo_1.27.1         R.methodsS3_1.8.2  
+[16] boot_1.3-32         survminer_0.5.2     survival_3.8-6     
+[19] ggpubr_1.0.0        ggplot2_4.0.3       purrr_1.2.2        
+[22] tibble_3.3.1        readr_2.2.0         stringr_1.6.0      
+[25] tidyr_1.3.2         dplyr_1.2.1         data.table_1.18.4  
+
+loaded via a namespace (and not attached):
+ [1] Rdpack_2.6.6                gridExtra_2.3.1            
+ [3] rlang_1.3.0                 magrittr_2.0.5             
+ [5] matrixStats_1.5.0           compiler_4.6.1             
+ [7] vctrs_0.7.3                 crayon_1.5.3               
+ [9] pkgconfig_2.0.3             shape_1.4.6.1              
+[11] backports_1.5.1             XVector_0.52.0             
+[13] labeling_0.4.3              tzdb_0.5.0                 
+[15] nloptr_2.2.1                bit_4.6.0                  
+[17] glmnet_5.0                  jomo_2.7-6                 
+[19] jsonlite_2.0.0              DelayedArray_0.38.2        
+[21] pan_2.0                     parallel_4.6.1             
+[23] broom_1.0.13                R6_2.6.1                   
+[25] stringi_1.8.7               RColorBrewer_1.1-3         
+[27] limma_3.68.4                car_3.1-5                  
+[29] rpart_4.1.27                GenomicRanges_1.64.0       
+[31] Rcpp_1.1.2                  Seqinfo_1.2.0              
+[33] SummarizedExperiment_1.42.0 iterators_1.0.14           
+[35] clinfun_1.1.5               IRanges_2.46.0             
+[37] rentrez_1.2.4               splines_4.6.1              
+[39] nnet_7.3-20                 tidyselect_1.2.1           
+[41] rstudioapi_0.19.0           abind_1.4-8                
+[43] codetools_0.2-20            curl_7.1.0                 
+[45] lattice_0.22-9              withr_3.0.3                
+[47] S7_0.2.2                    xml2_1.6.0                 
+[49] pillar_1.11.1               MatrixGenerics_1.24.0      
+[51] carData_3.0-6               foreach_1.5.2              
+[53] stats4_4.6.1                reformulas_0.4.4           
+[55] vroom_1.7.1                 mathjaxr_2.0-0             
+[57] S4Vectors_0.50.1            hms_1.1.4                  
+[59] scales_1.4.0                minqa_1.2.8                
+[61] glue_1.8.1                  tools_4.6.1                
+[63] lme4_2.0-1                  ggsignif_0.6.4             
+[65] mvtnorm_1.4-2               XML_3.99-0.23              
+[67] grid_4.6.1                  rbibutils_2.4.1            
+[69] nlme_3.1-169                Formula_1.2-5              
+[71] cli_3.6.6                   S4Arrays_1.12.0            
+[73] gtable_0.3.6                rstatix_1.0.0              
+[75] digest_0.6.39               SparseArray_1.12.2         
+[77] farver_2.1.2                lifecycle_1.0.5            
+[79] httr_1.4.8                  mitml_0.4-5                
+[81] statmod_1.5.2               bit64_4.8.2                
+[83] MASS_7.3-65                

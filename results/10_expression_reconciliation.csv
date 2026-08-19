@@ -1,0 +1,5 @@
+estimate,n,log2FC,p,cliffs_delta,note
+TCGA HiSeqV2 (log2 norm_count+1) vs TCGA adjacent normal (sample type 11),373 tumor / 50 normal,-0.070,0.0883,-0.148,"UALCAN (TCGA level-3 TPM, unpaired t-test) 는 포털 산출값으로 별도 행에 수기 기입"
+Xena TOIL TcgaTargetGtex RSEM (log2 TPM+0.001) vs TCGA adjacent normal,369 tumor / 50 normal,+0.480,0.000001,0.432,"UALCAN (TCGA level-3 TPM, unpaired t-test) 는 포털 산출값으로 별도 행에 수기 기입"
+Xena TOIL TcgaTargetGtex RSEM (log2 TPM+0.001) vs GTEx normal,369 tumor / 110 normal,+0.213,0.00159,0.198,"UALCAN (TCGA level-3 TPM, unpaired t-test) 는 포털 산출값으로 별도 행에 수기 기입"
+Xena PanCanAtlas EB++ batch-corrected (log2) vs TCGA adjacent normal (same cohort),369 tumor / 50 normal,-0.060,0.102,-0.143,"UALCAN (TCGA level-3 TPM, unpaired t-test) 는 포털 산출값으로 별도 행에 수기 기입"

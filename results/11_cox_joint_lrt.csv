@@ -1,0 +1,5 @@
+comparison,LR_chisq,df,p
+base + CYB5R3 vs base,4.55062389192676,1,0.0329067538695466
+base + CYB5R3 + MTARC1 vs base,5.29752631990459,2,0.070738651372618
+joint vs CYB5R3 alone (does MTARC1 add?),0.74690242797783,1,0.387458715946497
+interaction vs joint (is the axis multiplicative?),0.315964124248694,1,0.5740432133979

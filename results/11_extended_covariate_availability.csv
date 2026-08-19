@@ -1,0 +1,6 @@
+covariate,column,n_nonmissing
+AFP,fetoprotein_outcome_value,261
+vascular invasion,vascular_tumor_cell_type,291
+Ishak fibrosis / cirrhosis,fibrosis_ishak_score,196
+histologic grade,neoplasm_histologic_grade,337
+Child-Pugh,child_pugh_classification_grade,245

@@ -1,0 +1,3 @@
+grp,n_lines,median_gene_effect,Q1,Q3,mean_gene_effect,pct_below_minus0.5,wilcoxon_p,median_difference_liver_minus_lung,data_source,note
+Liver (HCC),22,-0.0456043411896007,-0.0784917047718368,0.00227191375255181,-0.0481560601943404,0,0.165,-0.0279836423412232,Bioconductor depmap 1.26.0,"Chronos gene effect: 0 = no effect, -1 = median common-essential, < -0.5 = dependent line"
+Lung,133,-0.0176206988483775,-0.0652389152326145,0.0226517023929094,-0.025711774337188,0.75187969924812,0.165,-0.0279836423412232,Bioconductor depmap 1.26.0,"Chronos gene effect: 0 = no effect, -1 = median common-essential, < -0.5 = dependent line"

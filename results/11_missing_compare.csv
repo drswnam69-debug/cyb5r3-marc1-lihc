@@ -1,0 +1,3 @@
+included,n,deaths,median_CYB5R3,median_MTARC1,median_age,pct_male,pct_stage_III_IV,median_OS_days,wilcox_p_CYB5R3_included_vs_excluded
+FALSE,24,14,12.93,4.94,68.5,58.3333333333333,,735.5,0.882376597855521
+TRUE,339,114,12.78,4.663,61,68.141592920354,25.6637168141593,585,0.882376597855521

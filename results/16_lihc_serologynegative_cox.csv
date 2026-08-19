@@ -1,0 +1,3 @@
+subset,n,events,HR_perSD,CI_low,CI_high,p,note
+No positive viral serology recorded,203,59,1.29723692388043,0.98450254659496,1.70931364525064,0.0644589983217329,EXPLORATORY. 'No positive viral serology recorded' is NOT a metabolic subset.
+Viral serology positive,162,71,1.13049055494451,0.880116238661897,1.45209102920519,0.336946666314284,EXPLORATORY. 'No positive viral serology recorded' is NOT a metabolic subset.
