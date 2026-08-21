@@ -5,8 +5,10 @@ authors:
   - family-names: "Nam"
     given-names: "Soon Woo"
     orcid: "https://orcid.org/0000-0001-5562-4775"
-    affiliation: "Incheon St. Mary's Hospital, College of Medicine, The Catholic University of Korea"
-version: "1.0.0"
+    affiliation: "Incheon St. Mary's Hospital, College of Medicine, The Catholic University of Korea, Seoul, Republic of Korea"
+version: "1.0.2"
+date-released: "2026-08-21"
+doi: "10.5281/zenodo.21987539"
 license: MIT
 repository-code: "https://github.com/drswnam69-debug/cyb5r3-marc1-lihc"
 abstract: >-

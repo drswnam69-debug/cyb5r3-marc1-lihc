@@ -1,0 +1,11 @@
+facet,level,n,med
+AJCC stage  (p = 0.164),I,171,12.73
+AJCC stage  (p = 0.164),II,86,12.73
+AJCC stage  (p = 0.164),III,85,12.87
+AJCC stage  (p = 0.164),IV,5,13.45
+Histologic grade  (p = 0.0067),G1,55,12.84
+Histologic grade  (p = 0.0067),G2,177,12.85
+Histologic grade  (p = 0.0067),G3,122,12.71
+Histologic grade  (p = 0.0067),G4,12,12.37
+Viral serology  (p = 0.21),Positive recorded,164,12.815
+Viral serology  (p = 0.21),None recorded,207,12.78

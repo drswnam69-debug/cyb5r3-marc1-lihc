@@ -193,7 +193,7 @@ if (nrow(res)) {
       log2FC = sprintf("%+.3f", log2FC_median),
       p = signif(wilcox_p, 3),
       cliffs_delta = round(cliffs_delta, 3))
-  rec$note <- "UALCAN (TCGA level-3 TPM, unpaired t-test) 는 포털 산출값으로 별도 행에 수기 기입"
+  rec$note <- "UALCAN (TCGA level-3 TPM, unpaired t-test) is a portal-rendered value and is entered as a separate row in Table 2; it is not computed by this script."
   w_res(rec, "10_expression_reconciliation.csv")
   print(rec)
 } else message("[10] 결과 없음 — 위 진단 메시지를 확인하십시오.")

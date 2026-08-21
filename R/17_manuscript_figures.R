@@ -203,6 +203,47 @@ try({
 }, silent = FALSE)
 
 ## =====================================================================
+## Figure 3A — CPTAC 단백 수준 (포털 유래 값; 원 투고 Figure 3A 를 새 서식으로 재작성)
+## =====================================================================
+hdr("Figure 3A · CPTAC 단백")
+p3a <- NULL
+try({
+  ## UALCAN 의 CPTAC 모듈은 원자료를 내보내지 않으므로 포털이 보고한 중앙값을 쓴다.
+  ## 본문 2.5절·Table 3 과 동일한 수치이며, 근사값임을 각주에 명시한다.
+  P <- data.frame(grp = factor(c("Adjacent normal","Tumor"),
+                               levels = c("Adjacent normal","Tumor")),
+                  z   = c(0.35, 0.0), n = c(165, 165))
+  ## 종양의 중앙값이 0 이므로 막대그래프로 그리면 막대가 보이지 않는다.
+  ## 0 기준선에서 뻗어나가는 점-선(lollipop) 형태로 그리고 값을 직접 표기한다.
+  p3a <- ggplot(P, aes(grp, z, colour = grp)) +
+    geom_hline(yintercept = 0, linewidth = 0.4, colour = "grey55") +
+    geom_segment(aes(x = grp, xend = grp, y = 0, yend = z), linewidth = 1.1) +
+    geom_point(size = 3.4) +
+    geom_text(aes(label = sprintf("%.2f", z)), vjust = -1.2, size = 2.6,
+              colour = INK["primary"], show.legend = FALSE) +
+    geom_text(aes(label = paste0("n = ", n)), y = -0.055, size = 2.3,
+              colour = INK["muted"], show.legend = FALSE) +
+    ## 유니코드 위첨자는 기기 폰트에 없을 수 있으므로 plotmath 로 그린다
+    annotate("text", x = 1.5, y = 0.44, parse = TRUE,
+             label = "p == 1.3 %*% 10^-5",
+             size = 2.6, colour = INK["secondary"]) +
+    scale_colour_manual(values = c("Adjacent normal" = PAL[["aqua"]],
+                                   "Tumor" = PAL[["orange"]])) +
+    scale_y_continuous(limits = c(-0.08, 0.50),
+                       breaks = c(0, 0.1, 0.2, 0.3, 0.4),
+                       labels = c("0","0.1","0.2","0.3","0.4")) +
+    labs(x = NULL, y = "Median protein Z-value",
+         title = "A  Protein level (CPTAC)",
+         caption = "Portal-derived medians.") +
+    theme_ms() + theme(legend.position = "none",
+                       panel.grid.major.x = element_blank(),
+                       panel.grid.major.y = element_line(colour = "grey90", linewidth = 0.3),
+                       axis.text.x = element_text(colour = INK["primary"]),
+                       plot.title = element_text(face = "bold", size = 9.5))
+  message("  Figure 3A 준비 완료 (포털 값)")
+}, silent = FALSE)
+
+## =====================================================================
 ## Figure 3B — 간 vs 폐 공발현 (95% CI 포함)
 ## =====================================================================
 hdr("Figure 3B · 공발현 조직 대비")
@@ -228,12 +269,35 @@ try({
                        breaks = c(-0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3),
                        labels = c("-0.3","-0.2","-0.1","0","0.1","0.2","0.3")) +
     labs(x = "Spearman correlation with CYB5R3 (95% CI)", y = NULL,
-         title = "Exploratory pairwise associations of CYB5R3, liver versus lung",
-         caption = "* Benjamini-Hochberg q < 0.05 for the Fisher r-to-z test of the liver-versus-lung difference.\nGenes ordered by that q value. TCGA-LIHC n = 371, TCGA-LUAD n = 515.") +
+         title = "B  Pairwise associations, liver vs lung",
+         caption = "* q < 0.05, Fisher r-to-z test of the tissue difference (BH-corrected).\nLIHC n = 371, LUAD n = 515.") +
     theme_ms()
   save_fig(p3, "Figure3B_coexpression", 130, 130)
   save_src(merge(CO, DIF[, c("gene","z_diff","p_diff","q_diff","verdict")], by = "gene"),
            "Figure3B_coexpression")
+
+  ## --- 두 패널을 하나의 Figure 3 으로 결합 (grid 만 사용, 추가 패키지 불필요) ---
+  if (!is.null(p3a)) {
+    combine2 <- function(pa, pb, name, w_mm, h_mm) {
+      for (dev in c("png","tiff")) {
+        f <- file.path(FIG, paste0(name, ".", dev))
+        if (dev == "png") grDevices::png(f, width = MM(w_mm), height = MM(h_mm),
+                                         units = "in", res = 300)
+        else grDevices::tiff(f, width = MM(w_mm), height = MM(h_mm),
+                             units = "in", res = 300, compression = "lzw")
+        grid::grid.newpage()
+        grid::pushViewport(grid::viewport(layout = grid::grid.layout(
+          1, 2, widths = grid::unit(c(0.85, 1.6), "null"))))
+        print(pa, vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 1))
+        print(pb, vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 2))
+        grDevices::dev.off()
+        message("  → ", f)
+      }
+    }
+    combine2(p3a, p3, "Figure3_orthogonal", 185, 128)
+  } else {
+    message("  [skip] Figure 3A 가 없어 결합본을 만들지 않았습니다.")
+  }
 }, silent = FALSE)
 
 ## =====================================================================
@@ -442,6 +506,183 @@ try({
   }
   dev.off()
   message("  → FigureS7_schoenfeld.png / .tiff  (global p = ", fmt_p(zph$table["GLOBAL","p"]), ")")
+}, silent = FALSE)
+
+
+## =====================================================================
+## Supplementary Figures S1-S5 — 본문과 같은 서식으로 재작성
+## (모두 deposited results/*.csv 에서만 그린다. 새 계산 없음.)
+## =====================================================================
+
+## --- Figure S1 : DepMap 의존성 ------------------------------------------
+hdr("Figure S1 · DepMap CRISPR dependency")
+try({
+  D <- rd("15_depmap_dependency.csv")
+  D$grp <- factor(D$grp, levels = D$grp[order(D$median_gene_effect)])
+  pw <- unique(D$wilcoxon_p)[1]
+  lab <- sprintf("%s\nn = %d lines\n%s", D$grp, D$n_lines,
+                 ifelse(D$pct_below_minus0.5 == 0, "no line below -0.5",
+                        sprintf("%.2f%% below -0.5", D$pct_below_minus0.5)))
+  pS1 <- ggplot(D, aes(grp, median_gene_effect, colour = grp)) +
+    geom_hline(yintercept = 0, linewidth = 0.4, colour = "grey55") +
+    geom_hline(yintercept = -0.5, linewidth = 0.5, linetype = 2, colour = PAL[["violet"]]) +
+    annotate("text", x = 0.62, y = -0.47, hjust = 0, size = 2.3, colour = PAL[["violet"]],
+             label = "dependency threshold (-0.5)") +
+    geom_linerange(aes(ymin = Q1, ymax = Q3), linewidth = 3.2, alpha = 0.35) +
+    geom_point(size = 3.4) +
+    geom_text(aes(label = sprintf("%.3f", median_gene_effect)), hjust = -0.7,
+              size = 2.5, colour = INK["primary"], show.legend = FALSE) +
+    annotate("text", x = 1.5, y = 0.06, size = 2.6, colour = INK["secondary"],
+             label = sprintf("Wilcoxon p = %.3f", pw)) +
+    scale_x_discrete(labels = setNames(lab, as.character(D$grp))) +
+    scale_y_continuous(limits = c(-0.58, 0.12)) +
+    scale_colour_manual(values = setNames(c(PAL[["orange"]], PAL[["blue"]])[seq_len(nrow(D))],
+                                          as.character(D$grp))) +
+    coord_flip() +
+    labs(x = NULL, y = "Chronos gene effect (median, bar = interquartile range)",
+         title = "CYB5R3 CRISPR dependency, liver versus lung cell lines",
+         caption = "Bioconductor depmap 1.26.0. 0 = no effect; -1 = median common-essential gene.\nSource: results/15_depmap_dependency.csv") +
+    theme_ms() + theme(legend.position = "none",
+                       panel.grid.major.y = element_blank(),
+                       panel.grid.major.x = element_line(colour = "grey90", linewidth = 0.3))
+  save_fig(pS1, "FigureS1_depmap", 180, 90)
+  save_src(D, "FigureS1_depmap")
+}, silent = FALSE)
+
+## --- Figure S2 : 범암종 forest ------------------------------------------
+hdr("Figure S2 · Pan-cancer forest")
+try({
+  PC <- rd("13_pancancer_full.csv")
+  PC <- PC[!is.na(PC$HR_perSD), ]
+  PC$cohort <- factor(PC$cohort, levels = PC$cohort[order(PC$HR_perSD)])
+  PC$is_lihc <- PC$cohort == "LIHC"
+  pS2 <- ggplot(PC, aes(HR_perSD, cohort)) +
+    geom_vline(xintercept = 1, linewidth = 0.4, colour = "grey55") +
+    geom_errorbarh(aes(xmin = CI_low, xmax = CI_high, colour = is_lihc),
+                   height = 0, linewidth = 0.6) +
+    geom_point(aes(colour = is_lihc), size = 1.9) +
+    geom_text(aes(x = max(CI_high, na.rm = TRUE) * 1.50, label = sprintf("q = %.2f", q_cox)), hjust = 1,
+              size = 2.2, colour = INK["muted"]) +
+    scale_colour_manual(values = c("FALSE" = PAL[["grey"]], "TRUE" = PAL[["orange"]])) +
+    scale_x_log10(limits = c(min(PC$CI_low, na.rm = TRUE) * 0.93,
+                             max(PC$CI_high, na.rm = TRUE) * 1.55),
+                  breaks = c(0.5, 0.75, 1, 1.5, 2, 3),
+                  labels = c("0.5","0.75","1","1.5","2","3")) +
+    labs(x = "Overall-survival hazard ratio per SD of CYB5R3 (univariable)", y = NULL,
+         title = "CYB5R3 and overall survival across 28 TCGA cohorts",
+         caption = "q, Benjamini-Hochberg across cohorts. No cohort is significant after correction.\nLIHC (orange) uses the same patients as the primary analysis and is not an independent replication.\nSource: results/13_pancancer_full.csv") +
+    theme_ms() + theme(legend.position = "none",
+                       panel.grid.major.y = element_blank(),
+                       panel.grid.major.x = element_line(colour = "grey92", linewidth = 0.3))
+  save_fig(pS2, "FigureS2_pancancer_forest", 170, 175)
+  save_src(PC, "FigureS2_pancancer_forest")
+}, silent = FALSE)
+
+## --- Figure S3 : log2FC vs log2HR ---------------------------------------
+hdr("Figure S3 · Expression change versus prognostic direction")
+try({
+  PC <- rd("13_pancancer_full.csv")
+  S3 <- PC[!is.na(PC$log2FC) & !is.na(PC$HR_perSD), ]
+  S3$logHR <- log2(S3$HR_perSD)
+  S3 <- S3[order(S3$log2FC), ]
+  ## x 순서로 3단계 수직 오프셋을 돌려 인접한 점끼리는 반드시 다른 높이에 놓는다
+  S3$vj <- rep(c(-1.15, 2.05, 3.55), length.out = nrow(S3))
+  S3$hj <- 0.5
+  ct <- suppressWarnings(stats::cor.test(S3$log2FC, S3$logHR, method = "spearman"))
+  pS3 <- ggplot(S3, aes(log2FC, logHR)) +
+    geom_hline(yintercept = 0, linewidth = 0.4, colour = "grey60") +
+    geom_vline(xintercept = 0, linewidth = 0.4, colour = "grey60") +
+    geom_point(aes(colour = cohort == "LIHC"), size = 2.2, show.legend = FALSE) +
+    ## 라벨이 겹치지 않도록 x 순서에 따라 위/아래를 번갈아 배치한다
+    geom_text(aes(label = cohort, vjust = vj, hjust = hj), size = 2.1,
+              colour = INK["secondary"], show.legend = FALSE) +
+    scale_colour_manual(values = c("FALSE" = PAL[["blue"]], "TRUE" = PAL[["orange"]])) +
+    annotate("text", x = -Inf, y = -Inf, hjust = -0.08, vjust = -1.0, size = 2.6,
+             colour = INK["secondary"],
+             label = sprintf("Spearman r = %.2f, p = %s, %d cohorts",
+                             unname(ct$estimate), fmt_p(ct$p.value), nrow(S3))) +
+    scale_x_continuous(expand = expansion(mult = 0.10)) +
+    scale_y_continuous(expand = expansion(mult = 0.13)) +
+    labs(x = "Tumor-versus-normal log2 fold change", y = "log2 hazard ratio per SD",
+         title = "Expression change does not predict prognostic direction",
+         caption = "Cohorts with at least 10 adjacent-normal samples. The up-and-adverse, down-and-protective\nrule does not generalize beyond the liver-lung contrast. Source: results/13_pancancer_full.csv") +
+    theme_ms() + theme(panel.grid.major.y = element_line(colour = "grey92", linewidth = 0.3))
+  save_fig(pS3, "FigureS3_fc_vs_hr", 150, 120)
+  save_src(S3, "FigureS3_fc_vs_hr")
+}, silent = FALSE)
+
+## --- Figure S4 : 병기 / 분화도 / 혈청학 ---------------------------------
+hdr("Figure S4 · Stage, grade and serology")
+try({
+  SG <- rd("16_lihc_stage_grade.csv")
+  ET <- rd("16_lihc_etiology.csv")
+  parse_levels <- function(txt, facet) {
+    parts <- trimws(strsplit(txt, ";", fixed = TRUE)[[1]])
+    lv <- sub("^([^ ]+) .*$", "\\1", parts)
+    n  <- as.numeric(sub("^.*n=([0-9]+).*$", "\\1", parts))
+    md <- as.numeric(sub("^.*median ([0-9.]+)\\).*$", "\\1", parts))
+    data.frame(facet = facet, level = factor(lv, levels = lv), n = n, med = md,
+               stringsAsFactors = FALSE)
+  }
+  st <- SG[SG$stratifier == "stage", ]
+  gr <- SG[SG$stratifier == "grade", ]
+  A <- parse_levels(st$levels, sprintf("AJCC stage  (p = %.3f)", st$p))
+  B <- parse_levels(gr$levels, sprintf("Histologic grade  (p = %.4f)", gr$p))
+  C <- data.frame(facet = sprintf("Viral serology  (p = %.2f)", ET$wilcox_p),
+                  level = factor(c("Positive recorded","None recorded"),
+                                 levels = c("Positive recorded","None recorded")),
+                  n = c(ET$n_viral_positive, ET$n_no_positive_recorded),
+                  med = c(ET$median_viral_positive, ET$median_no_positive),
+                  stringsAsFactors = FALSE)
+  S4 <- rbind(A, B, C)
+  S4$facet <- factor(S4$facet, levels = unique(S4$facet))
+  base <- min(S4$med) - 0.34
+  pS4 <- ggplot(S4, aes(level, med)) +
+    geom_segment(aes(x = level, xend = level, y = base + 0.13, yend = med),
+                 colour = "grey80", linewidth = 0.6) +
+    geom_point(size = 3, colour = PAL[["orange"]]) +
+    ## n 은 막대 아래 빈 영역에 두어 선과 겹치지 않게 한다
+    geom_text(aes(label = sprintf("n = %d", n)), y = base + 0.04, size = 2.2,
+              colour = INK["muted"]) +
+    facet_wrap(~ facet, scales = "free_x", nrow = 1) +
+    scale_y_continuous(limits = c(base, max(S4$med) + 0.10)) +
+    labs(x = NULL, y = "Median CYB5R3 (log2 norm_count+1)",
+         title = "CYB5R3 in TCGA-LIHC by stage, grade and viral serology",
+         caption = "Group medians with group sizes. Trend tests are Jonckheere-Terpstra (stage, grade) and Wilcoxon (serology).\nExpression declines across histologic grade; stage and serology do not differ.\n'None recorded' is not equivalent to non-viral etiology (Section 2.9).\nSource: results/16_lihc_stage_grade.csv, results/16_lihc_etiology.csv") +
+    theme_ms() + theme(panel.grid.major.y = element_line(colour = "grey92", linewidth = 0.3),
+                       panel.grid.major.x = element_blank())
+  save_fig(pS4, "FigureS4_stage_grade_serology", 180, 95)
+  save_src(S4, "FigureS4_stage_grade_serology")
+}, silent = FALSE)
+
+## --- Figure S5 : 16개 유전자 패널, 원값 + 조성보정값 ---------------------
+hdr("Figure S5 · Redox panel, raw and composition-adjusted")
+try({
+  CO  <- rd("12_coexpression_full.csv")
+  PU  <- rd("12_purity_adjusted.csv")
+  DIF <- rd("12_tissue_difference.csv")
+  ord <- DIF[order(DIF$q_diff), "gene"]
+  raw <- CO[, c("cohort","gene","rho")]; raw$kind <- "Unadjusted"
+  adj <- PU[, c("cohort","gene","rho_adjusted")]
+  names(adj)[3] <- "rho"; adj$kind <- "Composition-adjusted"
+  S5 <- rbind(raw, adj)
+  S5$gene   <- factor(S5$gene, levels = rev(ord))
+  S5$cohort <- factor(S5$cohort, levels = c("LIHC","LUAD"))
+  S5$kind   <- factor(S5$kind, levels = c("Unadjusted","Composition-adjusted"))
+  pS5 <- ggplot(S5, aes(rho, gene, colour = cohort, shape = kind)) +
+    geom_vline(xintercept = 0, linewidth = 0.35, colour = "grey60") +
+    geom_point(size = 1.9, position = position_dodge(width = 0.62)) +
+    scale_colour_manual(values = c(LIHC = PAL[["orange"]], LUAD = PAL[["blue"]])) +
+    scale_shape_manual(values = c("Unadjusted" = 16, "Composition-adjusted" = 1)) +
+    scale_x_continuous(limits = c(-0.32, 0.32),
+                       breaks = c(-0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3),
+                       labels = c("-0.3","-0.2","-0.1","0","0.1","0.2","0.3")) +
+    labs(x = "Spearman correlation with CYB5R3", y = NULL,
+         title = "Redox panel before and after adjustment for tumor cellular composition",
+         caption = "Open symbols, adjusted for a non-tumor-content proxy (Section 4.6). Genes ordered by the\nq value of the liver-versus-lung difference. Source: results/12_coexpression_full.csv,\nresults/12_purity_adjusted.csv") +
+    theme_ms()
+  save_fig(pS5, "FigureS5_panel_adjusted", 150, 140)
+  save_src(S5, "FigureS5_panel_adjusted")
 }, silent = FALSE)
 
 save_session("17_figures")
